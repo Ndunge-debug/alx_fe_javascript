@@ -8,56 +8,98 @@
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
+      background-color: #f9f9f9;
     }
+
+    h1 {
+      color: #333;
+    }
+
     #quoteDisplay {
       margin: 20px 0;
-      padding: 10px;
-      border: 1px solid #ccc;
+      padding: 15px;
+      border-left: 4px solid #007bff;
+      background: #fff;
       font-size: 1.2em;
     }
+
     #formContainer input {
       display: block;
       margin: 10px 0;
-      padding: 8px;
+      padding: 10px;
       width: 300px;
     }
+
     #formContainer button {
-      padding: 8px 16px;
+      padding: 10px 20px;
+      background: #007bff;
+      color: #fff;
+      border: none;
       cursor: pointer;
     }
+
     #controls {
       margin: 20px 0;
+    }
+
+    #categoryFilter {
+      padding: 8px;
+      margin-top: 10px;
+    }
+
+    #storageTools {
+      margin-top: 40px;
+    }
+
+    #syncNotice {
+      background: #ffd700;
+      padding: 10px;
+      margin-bottom: 20px;
+      display: none;
+      font-weight: bold;
+    }
+
+    button, select {
+      font-size: 1em;
+    }
+
+    input[type="file"] {
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
+  <!-- Sync Notification Banner -->
+  <div id="syncNotice">🔄 Quotes synced with server!</div>
+
+  <!-- Main Header -->
   <h1>Dynamic Quote Generator</h1>
 
-  <!-- Quote Display Area -->
+  <!-- Display Area -->
   <div id="quoteDisplay"><em>Click "Show New Quote" to begin!</em></div>
 
-  <!-- Quote Controls -->
+  <!-- Controls -->
   <div id="controls">
     <button id="newQuote">Show New Quote</button>
     <br><br>
 
-    <!-- Category Filter -->
     <label for="categoryFilter">Filter by Category:</label>
     <select id="categoryFilter" onchange="filterQuotes()">
       <option value="all">All Categories</option>
     </select>
   </div>
 
-  <!-- Form container will be filled dynamically -->
+  <!-- Add Quote Form (injected dynamically) -->
   <div id="formContainer"></div>
 
-  <!-- Export / Import Section -->
-  <div id="storageTools" style="margin-top: 30px;">
+  <!-- Export / Import JSON -->
+  <div id="storageTools">
     <h3>Import / Export Quotes</h3>
     <button id="exportBtn">Export Quotes to JSON</button><br><br>
     <input type="file" id="importFile" accept=".json" />
   </div>
 
+  <!-- JS Script -->
   <script src="script.js"></script>
 </body>
 </html>
