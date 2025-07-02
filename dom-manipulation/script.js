@@ -8,7 +8,7 @@ const quoteDisplay = document.getElementById('quoteDisplay');
 const newQuoteBtn = document.getElementById('newQuote');
 const categorySelect = document.getElementById('categorySelect');
 
-function showRandomQuote() {
+function displayRandomQuote() {
   const selectedCategory = categorySelect.value;
   const filteredQuotes = selectedCategory === 'all'
     ? quotes
@@ -58,8 +58,7 @@ function populateCategories() {
   });
 }
 
-newQuoteBtn.addEventListener('click', showRandomQuote);
-categorySelect.addEventListener('change', showRandomQuote);
+newQuoteBtn.addEventListener('click', displayRandomQuote);
+categorySelect.addEventListener('change', displayRandomQuote);
 
 populateCategories();
-
