@@ -21,8 +21,4 @@ function showRandomQuote() {
 
   const randomIndex = Math.floor(Math.random() * filteredQuotes.length);
   const quote = filteredQuotes[randomIndex];
-
-  quoteDisplay.innerHTML
-
-
-
+  quoteDisplay.innerHTML = `<p>"${quote.text}"</p><small>— ${quote.category}</sm
