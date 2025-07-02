@@ -12,15 +12,21 @@
     #quoteDisplay {
       margin: 20px 0;
       padding: 10px;
-      border-left: 4px solid #3498db;
-      background-color: #f0f8ff;
+      border: 1px solid #ccc;
+      font-size: 1.2em;
     }
-    input, button {
-      margin: 5px;
-      padding: 10px;
+    #formContainer input {
+      display: block;
+      margin: 10px 0;
+      padding: 8px;
+      width: 300px;
     }
-    select {
-      padding: 5px;
+    #formContainer button {
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+    #controls {
+      margin: 20px 0;
     }
   </style>
 </head>
@@ -28,26 +34,29 @@
   <h1>Dynamic Quote Generator</h1>
 
   <!-- Quote Display -->
-  <div id="quoteDisplay">Click the button to display a quote</div>
-  <button id="newQuote">Show New Quote</button>
+  <div id="quoteDisplay"><em>Click "Show New Quote" to begin!</em></div>
 
-  <!-- Category Filter -->
-  <div>
+  <!-- Controls -->
+  <div id="controls">
+    <button id="newQuote">Show New Quote</button>
+
     <label for="categorySelect">Filter by Category:</label>
     <select id="categorySelect">
       <option value="all">All</option>
     </select>
   </div>
 
-  <!-- Add New Quote Form -->
-  <div>
-    <h3>Add a New Quote</h3>
-    <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
-    <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
-    <button onclick="addQuote()">Add Quote</button>
+  <!-- Form will be dynamically injected -->
+  <div id="formContainer"></div>
+
+  <!-- JSON Export/Import -->
+  <div id="storageTools" style="margin-top: 30px;">
+    <h3>Import / Export Quotes</h3>
+    <button id="exportBtn">Export Quotes to JSON</button><br><br>
+    <input type="file" id="importFile" accept=".json" />
   </div>
 
+  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
-
