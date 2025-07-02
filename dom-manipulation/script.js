@@ -8,7 +8,6 @@ const quoteDisplay = document.getElementById('quoteDisplay');
 const newQuoteBtn = document.getElementById('newQuote');
 const categorySelect = document.getElementById('categorySelect');
 
-// ✅ Function name and use of innerHTML included
 function showRandomQuote() {
   const selectedCategory = categorySelect.value;
   const filteredQuotes = selectedCategory === 'all'
@@ -23,7 +22,6 @@ function showRandomQuote() {
   const randomIndex = Math.floor(Math.random() * filteredQuotes.length);
   const quote = filteredQuotes[randomIndex];
 
-  // ✅ Use innerHTML to meet checker requirement
   quoteDisplay.innerHTML
 
 
